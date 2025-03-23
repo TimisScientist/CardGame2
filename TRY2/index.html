@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>抽卡小遊戲</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <div id="card-area">
+      <!-- 卡牌改用 <img> 方式示範 -->
+      <div class="card" data-id="card1">
+        <img src="images/card1.jpg" alt="Card 1">
+      </div>
+      <div class="card" data-id="card2">
+        <img src="images/card2.jpg" alt="Card 2">
+      </div>
+      <div class="card" data-id="card3">
+        <img src="images/card3.jpg" alt="Card 3">
+      </div>
+    </div>
+
+    <button id="startButton">Start</button>
+  </div>
+
+  <!-- 半透明背景與卡片展示視窗（Modal） -->
+  <div id="overlay" class="hidden">
+    <div id="cardModal">
+      <span id="closeBtn">&#10006;</span>
+      <!-- 用來容納被抽到的卡片 (放大後) -->
+      <div id="drawnCard"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

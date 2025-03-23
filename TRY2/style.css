@@ -1,0 +1,90 @@
+/* 遊戲主容器 */
+.game-container {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 50px auto;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding-top: 30px;
+  }
+  
+  #card-area {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* 卡牌初始在容器中央 */
+  .card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 120px;
+    margin: -60px 0 0 -40px;
+    border: 2px solid #999;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.8s;
+    background-color: #ccc; /* 預防圖片較小時的底色 */
+  }
+  
+  /* 卡牌內的圖片：預設填滿.card */
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* 隱藏用 */
+  .hidden {
+    display: none;
+  }
+  
+  /* 遮罩背景 */
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* 彈窗 (Modal) */
+  #cardModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  /* 關閉按鈕 */
+  #closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  /* 放大後卡片圖片 */
+  #drawnCard img {
+    width: 200px;  /* 調整想要的放大尺寸 */
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    /* 可自行加上 box-shadow、邊框等效果 */
+  }
+  
