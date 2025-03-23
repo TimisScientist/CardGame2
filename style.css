@@ -1,9 +1,10 @@
-/* 遊戲主容器 */
+/* 主容器：使用相對寬度，最大寬度 600px，方便在各種裝置上呈現 */
 .game-container {
     position: relative;
-    width: 600px;
+    width: 90%;
+    max-width: 600px;
     height: 400px;
-    margin: 50px auto;
+    margin: 20px auto;
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -11,28 +12,26 @@
     padding-top: 30px;
   }
   
+  /* 卡牌區域：作為飛舞的邊界 */
   #card-area {
     position: relative;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    background-color: #fafafa;
   }
   
-  /* 卡牌初始在容器中央 */
+  /* 卡牌基本設定 */
   .card {
     position: absolute;
-    top: 50%;
-    left: 50%;
     width: 80px;
     height: 120px;
-    margin: -60px 0 0 -40px;
     border: 2px solid #999;
     border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.8s;
-    background-color: #ccc; /* 預防圖片較小時的底色 */
+    background-color: #ccc;
   }
   
-  /* 卡牌內的圖片：預設填滿.card */
+  /* 卡牌內圖片填滿卡牌 */
   .card img {
     width: 100%;
     height: 100%;
@@ -40,12 +39,12 @@
     border-radius: 10px;
   }
   
-  /* 隱藏用 */
+  /* 隱藏元素 */
   .hidden {
     display: none;
   }
   
-  /* 遮罩背景 */
+  /* 半透明遮罩 */
   #overlay {
     position: fixed;
     top: 0;
@@ -70,7 +69,7 @@
     box-sizing: border-box;
   }
   
-  /* 關閉按鈕 */
+  /* 彈窗關閉按鈕 */
   #closeBtn {
     position: absolute;
     top: 10px;
@@ -79,12 +78,30 @@
     font-size: 18px;
   }
   
-  /* 放大後卡片圖片 */
+  /* Modal 內放大的卡牌圖片 */
   #drawnCard img {
-    width: 200px;  /* 調整想要的放大尺寸 */
+    width: 200px;
     height: 300px;
     object-fit: cover;
     border-radius: 10px;
-    /* 可自行加上 box-shadow、邊框等效果 */
+    margin-top: 30px;
+  }
+  
+  /* 響應式調整：螢幕較小時縮小部分尺寸 */
+  @media (max-width: 600px) {
+    .game-container {
+      height: 300px;
+      padding-top: 20px;
+    }
+    #cardModal {
+      width: 90%;
+      height: auto;
+      padding: 10px;
+    }
+    #drawnCard img {
+      width: 150px;
+      height: 225px;
+      margin-top: 20px;
+    }
   }
   

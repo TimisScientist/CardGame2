@@ -2,13 +2,15 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <title>抽卡小遊戲</title>
+  <!-- 新增 viewport meta，讓手機或平板自動調整尺寸 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>抽卡小遊戲：快速飛舞</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="game-container">
     <div id="card-area">
-      <!-- 卡牌改用 <img> 方式示範 -->
+      <!-- 三張卡牌圖片 -->
       <div class="card" data-id="card1">
         <img src="images/card1.jpg" alt="Card 1">
       </div>
@@ -23,11 +25,10 @@
     <button id="startButton">Start</button>
   </div>
 
-  <!-- 半透明背景與卡片展示視窗（Modal） -->
+  <!-- 半透明背景與彈窗 -->
   <div id="overlay" class="hidden">
     <div id="cardModal">
       <span id="closeBtn">&#10006;</span>
-      <!-- 用來容納被抽到的卡片 (放大後) -->
       <div id="drawnCard"></div>
     </div>
   </div>
